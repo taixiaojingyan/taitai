@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+
+			window.onload = function(){
+
+
+				function Animal(sex, age) {
+					this.name = sex;
+					this.age = age;
+				}
+				//动物的方法
+				Animal.prototype.eat = function () {
+					console.log("吃饭");
+				};
+				function Dog(color) {
+					this.color = color;
+				}
+				Dog.prototype = new Animal("男",8);
+				Dog.prototype.Home = function () {
+					console.log("我在家");
+				};
+				var dog = new Dog("黑色");
+				console.log(dog.name + "---" + dog.age + "---" + dog.color);
+				dog.eat();
+				dog.Home();
+
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
